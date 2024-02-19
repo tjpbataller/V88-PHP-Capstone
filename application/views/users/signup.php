@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Organic Shop: Let’s order fresh items for you.</title>
 
-    <link rel="shortcut icon" href="assets/images/organic_shop_favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/organic_shop_favicon.ico" type="image/x-icon">
 
     <script src="../assets/js/vendor/jquery.min.js"></script>
     <script src="../assets/js/vendor/popper.min.js"></script>
@@ -36,7 +36,7 @@
         <a href="/dashboard"><img src="../assets/images/organic_shop_logo_large.svg" alt="Organic Shop"></a>
         <form action="process.php" method="post">
             <h2>Signup to order.</h2>
-            <a href="login.html">Already a member? Login here.</a>
+            <a href="/users/login">Already a member? Login here.</a>
             <ul>
                 <li>
                     <input type="text" name="first_name">

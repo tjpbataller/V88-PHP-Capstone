@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$route['default_controller'] = 'Chats';
+$route['default_controller'] = 'Users';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['/'] = "users/index";

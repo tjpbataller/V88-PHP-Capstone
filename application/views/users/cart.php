@@ -32,7 +32,7 @@
             </div>
         </header>
         <aside>
-            <a href="catalogue.html"><img src="../assets/images/organic_shop_logo.svg" alt="Organic Shop"></a>
+            <a href="/users/catalogue"><img src="../assets/images/organic_shop_logo.svg" alt="Organic Shop"></a>
             <!-- <ul>
                 <li class="active"><a href="#"></a></li>
                 <li><a href="#"></a></li>

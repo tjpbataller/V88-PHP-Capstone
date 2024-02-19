@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
 
-    <script src="../assets/js/vendor/jquery.min.js"></script>
-    <script src="../assets/js/vendor/popper.min.js"></script>
-    <script src="../assets/js/vendor/bootstrap.min.js"></script>
-    <script src="../assets/js/vendor/bootstrap-select.min.js"></script>
-    <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/vendor/bootstrap-select.min.css">
+    <script src="<?= base_url()?>/assets/js/vendor/jquery.min.js"></script>
+    <script src="<?= base_url()?>/assets/js/vendor/popper.min.js"></script>
+    <script src="<?= base_url()?>/assets/js/vendor/bootstrap.min.js"></script>
+    <script src="<?= base_url()?>/assets/js/vendor/bootstrap-select.min.js"></script>
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/vendor/bootstrap-select.min.css">
 
-    <link rel="stylesheet" href="../assets/css/custom/admin_global.css">
-    <link rel="stylesheet" href="../assets/css/custom/admin_orders.css">
-    <script src="../assets/js/global/admin_orders.js"></script>
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/custom/admin_global.css">
+    <link rel="stylesheet" href="<?= base_url()?>/assets/css/custom/admin_orders.css">
+    <script src="<?= base_url()?>/assets/js/global/admin_orders.js"></script>
 </head>
 <script>
      $(document).ready(function() {
@@ -36,23 +36,23 @@
             <h1>Let’s provide fresh items for everyone.</h1>
             <h2>Orders</h2>
             <div>
-                <a class="switch" href="catalogue.html">Switch to Shop View</a>
+                <a class="switch" href="/users/catalogue">Switch to Shop View</a>
                 <button class="profile">
-                    <img src="../assets/images/profile.png" alt="#">
+                    <img src="<?= base_url()?>/assets/images/profile.png" alt="#">
                 </button>
             </div>
             <div class="dropdown show">
                 <a class="btn btn-secondary dropdown-toggle profile_dropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                 <div class="dropdown-menu admin_dropdown" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="login.html">Logout</a>
+                    <a class="dropdown-item" href="/users/login">Logout</a>
                 </div>
             </div>
         </header>
         <aside>
-            <a href="#"><img src="../assets/images/organi_shop_logo_dark.svg" alt="Organic Shop"></a>
+            <a href="#"><img src="<?= base_url()?>/assets/images/organi_shop_logo_dark.svg" alt="Organic Shop"></a>
             <ul>
                 <li class="active"><a href="#">Orders</a></li>
-                <li><a href="admin_products.html">Products</a></li>
+                <li><a href="/users/admin_products">Products</a></li>
             </ul>
         </aside>
         <section>
@@ -64,27 +64,27 @@
                 <ul>
                     <li>
                         <button type="submit" class="active">
-                            <span>36</span><img src="../assets/images/all_orders_icon.svg" alt="#"><h4>All Products</h4>
+                            <span>36</span><img src="<?= base_url()?>/assets/images/all_orders_icon.svg" alt="#"><h4>All Products</h4>
                         </button>
                     </li>
                     <li>
                         <button type="submit">
-                            <span>36</span><img src="../assets/images/pending_icon.svg" alt="#"><h4>Pending</h4>
+                            <span>36</span><img src="<?= base_url()?>/assets/images/pending_icon.svg" alt="#"><h4>Pending</h4>
                         </button>
                     </li>
                     <li>
                         <button type="submit">
-                            <span>36</span><img src="../assets/images/on_process_icon.svg" alt="#"><h4>On-Process</h4>
+                            <span>36</span><img src="<?= base_url()?>/assets/images/on_process_icon.svg" alt="#"><h4>On-Process</h4>
                         </button>
                     </li>
                     <li>
                         <button type="submit">
-                            <span>36</span><img src="../assets/images/shipped_icon.svg" alt="#"><h4>Shipped</h4>
+                            <span>36</span><img src="<?= base_url()?>/assets/images/shipped_icon.svg" alt="#"><h4>Shipped</h4>
                         </button>
                     </li>
                     <li>
                         <button type="submit">
-                            <span>36</span><img src="../assets/images/delivered_icon.svg" alt="#"><h4>Delivered</h4>
+                            <span>36</span><img src="<?= base_url()?>/assets/images/delivered_icon.svg" alt="#"><h4>Delivered</h4>
                         </button>
                     </li>
                 </ul>

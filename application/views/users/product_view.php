@@ -36,12 +36,12 @@
         <header>
             <h1>Let’s order fresh items for you.</h1>
             <div>
-                <a class="signup_btn" href="signup.html">Signup</a>
-                <a class="login_btn" href="login.html">Login</a>
+                <a class="signup_btn" href="/users/signup">Signup</a>
+                <a class="login_btn" href="/users/login">Login</a>
             </div>
         </header>
         <aside>
-            <a href="catalogue.html"><img src="../assets/images/organic_shop_logo.svg" alt="Organic Shop"></a>
+            <a href="/users/catalogue"><img src="../assets/images/organic_shop_logo.svg" alt="Organic Shop"></a>
             <!-- <ul>
                 <li class="active"><a href="#"></a></li>
                 <li><a href="#"></a></li>
@@ -51,8 +51,8 @@
             <form action="process.php" method="post" class="search_form">
                 <input type="text" name="search" placeholder="Search Products">
             </form>
-            <a class="show_cart" href="cart.html">Cart (0)</a>
-            <a href="catalogue.html">Go Back</a>
+            <a class="show_cart" href="/users/cart">Cart (0)</a>
+            <a href="/users/catalogue">Go Back</a>
             <ul>
                 <li>
                     <img src="../assets/images/burger.png" alt="food">
@@ -98,7 +98,7 @@
                 <h3>Similar Items</h3>
                 <ul>
                     <li>
-                        <a href="product_view.html">
+                        <a href="/users/product_view">
                             <img src="../assets/images/food.png" alt="#">
                             <h3>Vegetables</h3>
                             <ul class="rating">
@@ -113,7 +113,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="product_view.html">
+                        <a href="/users/product_view">
                             <img src="../assets/images/food.png" alt="#">
                             <h3>Vegetables</h3>
                             <ul class="rating">
@@ -128,7 +128,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="product_view.html">
+                        <a href="/users/product_view">
                             <img src="../assets/images/food.png" alt="#">
                             <h3>Vegetables</h3>
                             <ul class="rating">
@@ -143,7 +143,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="product_view.html">
+                        <a href="/users/product_view">
                             <img src="../assets/images/food.png" alt="#">
                             <h3>Vegetables</h3>
                             <ul class="rating">
@@ -158,7 +158,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="product_view.html">
+                        <a href="/users/product_view">
                             <img src="../assets/images/food.png" alt="#">
                             <h3>Vegetables</h3>
                             <ul class="rating">
@@ -173,7 +173,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="product_view.html">
+                        <a href="/users/product_view">
                             <img src="../assets/images/food.png" alt="#">
                             <h3>Vegetables</h3>
                             <ul class="rating">
@@ -188,7 +188,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="product_view.html">
+                        <a href="/users/product_view">
                             <img src="../assets/images/food.png" alt="#">
                             <h3>Vegetables</h3>
                             <ul class="rating">
