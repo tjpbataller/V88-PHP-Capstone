@@ -7,14 +7,6 @@ class Users extends CI_Controller
     {
         $this->load->view("users/index");
     }
-    public function admin_orders()
-    {
-        $this->load->view("users/admin_orders");
-    }
-    public function admin_products()
-    {
-        $this->load->view("users/admin_products");
-    }
     public function catalogue()
     {
         $this->load->view("users/catalogue");
@@ -34,5 +26,17 @@ class Users extends CI_Controller
     public function login()
     {
         $this->load->view("users/login");
+    }
+    public function admin_orders()
+    {
+        $this->load->view("users/admin_orders");
+    }
+    public function admin_products()
+    {
+        $this->load->view("users/admin_products");
+    }
+    public function admin_dashboard()
+    {
+        $this->load->view("users/admin_dashboard");
     }
 }
