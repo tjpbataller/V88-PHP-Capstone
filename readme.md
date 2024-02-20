@@ -1,3 +1,3 @@
 # **CAPSTONE ERD DESIGN**
 
-![Capstone ERD](https://github.com/tjpbataller/V88-PHP-Capstone/blob/9846940dfbe3ee68e9ec317c72ff78e17497610e/assets/images/erd/ERD.JPG)
+![Capstone ERD](https://github.com/tjpbataller/V88-PHP-Capstone/blob/1e7e4d76c3412ee4dbb62b608f571d11e1471c3f/assets/images/erd/ERD.JPG)
