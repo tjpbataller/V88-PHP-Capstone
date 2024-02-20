@@ -17,9 +17,9 @@ $(document).ready(function() {
     });
 
     $("body").on("click", ".increase_decrease_quantity", function() {
-        let input = $(this).closest(".form_control").find("input");
+        let input = $(this).closest(".form-control").find("input");
         let input_val = parseInt(input.val());
-
+        console.log(input.val())
         if($(this).attr("data-quantity-ctrl") == 1) {
             input.val(input_val + 1);
         }
@@ -28,18 +28,21 @@ $(document).ready(function() {
                 input.val(input_val - 1)
             };
         };
-
+        let total_amount = parseInt(input.val()) * parseInt(($(this).closest(".form-control").find(".price").text()).substring(2));
+        $(this).closest(".form-control").find(".total_amount").text("$ " + total_amount);
         $("input[name=update_cart_item_id]").val($(this).val())
         $("input[name=update_cart_item_quantity]").val(input.val());
         $(".cart_items_form").trigger("submit");
     });
 
     $("body").on("submit", ".cart_items_form", function() {
+        $(".popover_overlay").show();
         let form = $(this);
-        $.post(form.attr("action"), form.serialize(), function(res) {
-            $(".wrapper > section").html(res);
-            $(".popover_overlay").fadeOut();
-        });
+        // console.log("update cart");
+        // $.post(form.attr("action"), form.serialize(), function(res) {
+        //     $(".wrapper > section").html(res);
+        // });
+        $(".popover_overlay").fadeOut();
         return false;
     });
 
