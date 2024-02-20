@@ -21,13 +21,34 @@ $(document).ready(function(){
     });
     $("body").on("submit", "#add_to_cart_form", function() {
         let form = $(this);
-        // $.post(form.attr("action"), form.serialize(), function(res) {
-        //     $(".content_section").html(res);
-        // });
-        $("#success_modal").modal("show");
-        setTimeout(function() {
-            $("#success_modal").modal("hide")
-        }, 1200);
+        $.post(form.attr("action"), form.serialize(), function(res) {
+            $(".content_section").html(res);
+            $("#success_modal").modal("show");
+            setTimeout(function() {
+                $("#success_modal").modal("hide")
+            }, 1200);
+        });
+        return false;
+    });
+    $("#add_to_cart").click(function(){
+        let price = parseInt(($(".amount").text()).substring(2));
+        let default_quantity = 1;
+        $(this).closest("form").find("input").val(default_quantity);
+        $(this).closest("form").find("span.total_amount").text("$ " + price);
+        $("<span class='added_to_cart'>Added to cart succesfully!</span>")
+        .insertAfter(this)
+        .fadeIn()
+        .delay(1000)
+        .fadeOut(function() {
+            $(this).remove();
+        });
+       return false;
+    });
+    $("body").on("keyup", ".search_form", function() {
+        console.log("okay")
+        let form = $(this);
+        filterProducts(form);
+        $(".categories_form").find(".active").removeClass("active");
         return false;
     });
 });

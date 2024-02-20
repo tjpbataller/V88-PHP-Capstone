@@ -12,9 +12,9 @@
     <script src="../assets/js/vendor/popper.min.js"></script>
     <script src="../assets/js/vendor/bootstrap.min.js"></script>
     <script src="../assets/js/vendor/bootstrap-select.min.js"></script>
+    <script src="../assets/js/global/dashboard.js"></script>
     <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/vendor/bootstrap-select.min.css">
-
     <link rel="stylesheet" href="../assets/css/custom/global.css">
     <link rel="stylesheet" href="../assets/css/custom/product_dashboard.css">
 </head>
@@ -26,19 +26,12 @@
 <body>
     <div class="wrapper">
         <header>
-            <h1>Let’s order fresh items for you.</h1>
+            <a href="catalogue.html"><h1>Let’s order fresh items for you.</h1></a>
             <div>
                 <a class="signup_btn" href="signup.html">Signup</a>
                 <a class="login_btn" href="login.html">Login</a>
             </div>
         </header>
-        <aside>
-            <a href="products_dashboard.html"><img src="../assets/images/organic_shop_logo.svg" alt="Organic Shop"></a>
-            <!-- <ul>
-                <li class="active"><a href="#"></a></li>
-                <li><a href="#"></a></li>
-            </ul> -->
-        </aside>
         <section >
             <form action="process.php" method="post" class="search_form">
                 <input type="text" name="search" placeholder="Search Products">

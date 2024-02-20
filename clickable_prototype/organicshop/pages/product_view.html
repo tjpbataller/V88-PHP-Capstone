@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-
     <script src="../assets/js/vendor/jquery.min.js"></script>
     <script src="../assets/js/vendor/popper.min.js"></script>
     <script src="../assets/js/vendor/bootstrap.min.js"></script>
@@ -16,42 +15,17 @@
     <link rel="stylesheet" href="../assets/css/custom/global.css">
     <link rel="stylesheet" href="../assets/css/custom/product_view.css">
 </head>
-
-<script>
-    $(document).ready(function() {
-        $("#add_to_cart").click(function(){
-            $("<span class='added_to_cart'>Added to cart succesfully!</span>")
-            .insertAfter(this)
-            .fadeIn()
-            .delay(1000)
-            .fadeOut(function() {
-                $(this).remove();
-            });
-           return false;
-        });
-    })
-</script>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Let’s order fresh items for you.</h1>
+            <a href="catalogue.html"><h1>Let’s order fresh items for you.</h1></a>
             <div>
+                <a class="show_cart" href="cart.html">Cart (0)</a>
                 <a class="signup_btn" href="signup.html">Signup</a>
                 <a class="login_btn" href="login.html">Login</a>
             </div>
         </header>
-        <aside>
-            <a href="catalogue.html"><img src="../assets/images/organic_shop_logo.svg" alt="Organic Shop"></a>
-            <!-- <ul>
-                <li class="active"><a href="#"></a></li>
-                <li><a href="#"></a></li>
-            </ul> -->
-        </aside>
-        <section >
-            <form action="process.php" method="post" class="search_form">
-                <input type="text" name="search" placeholder="Search Products">
-            </form>
-            <a class="show_cart" href="cart.html">Cart (0)</a>
+        <section>
             <a href="catalogue.html">Go Back</a>
             <ul>
                 <li>
@@ -73,7 +47,7 @@
                         <li></li>
                     </ul>
                     <span>36 Rating</span>
-                    <span class="amount">$ 300</span>
+                    <span class="amount">$ 10</span>
                     <p>Lorem ipsum dolor sit amet consectetur. Eget sit posuere enim facilisi. Pretium orci venenatis habitasse gravida nulla tincidunt iaculis. Aliquet at massa quisque libero viverra ut sed. Est vulputate est rutrum nunc nunc pellentesque ultrices pharetra. Mauris euismod sed vel quisque tincidunt suspendisse sed turpis volutpat.</p>
                     <form action="" method="post" id="add_to_cart_form">
                         <ul>

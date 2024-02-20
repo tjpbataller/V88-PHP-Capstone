@@ -150,6 +150,12 @@ body .wrapper header div a.login_btn {
   background-color: #9C89FF;
   color: #fff;
 }
+body .wrapper header div a.show_cart {
+  color: #9C89FF;
+}
+body .wrapper header div a.show_cart:hover {
+  color: #342191;
+}
 body .wrapper header div .profile_btn {
   font: 18px/46px proxima_nova_bold, sans-serif;
   color: #A1A1A1;
@@ -174,7 +180,7 @@ body .wrapper ul {
   list-style: none;
 }
 body .wrapper > section {
-  padding: 141px 60px 0px 140px;
+  padding: 141px 60px 0px 100px;
   position: relative;
 }
 body .wrapper > section .search_form {
