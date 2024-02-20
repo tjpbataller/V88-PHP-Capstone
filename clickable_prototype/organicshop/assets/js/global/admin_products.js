@@ -47,11 +47,13 @@ $(document).ready(function() {
 
     });
 
-    $("body").on("submit", ".add_product_form", function() {
+    $("body").on("click", "#add_product_btn", function() {
+        let form = $("form#add_product_form");
+        let formData = new FormData(form[0]);
         $.ajax({
-            url: $(this).attr("action"),
+            url: form.attr("action"),
             type: 'POST',
-            data: new FormData(this),
+            data: formData,
             contentType: false,
             cache: false,
             processData:false,
@@ -86,18 +88,14 @@ $(document).ready(function() {
         filterProducts(form)
         return false;
     });
-
     $("body").on("click", ".categories_form button", function() {
         let button = $(this);
         let form = button.closest("form");
-
         form.find("input[name=category]").val(button.attr("data-category"));
         form.find("input[name=category_name]").val(button.attr("data-category-name"));
         button.closest("ul").find(".active").removeClass("active");
         button.addClass("active");
-
         filterProducts(form);
-
         return false;
     });
 
@@ -106,10 +104,12 @@ $(document).ready(function() {
         $(".categories_form").find(".active").removeClass("active");
     });
 
-    $("body").on("submit", ".delete_product_form", function() {
-        filterProducts($(this));
+    $("body").on("click", ".delete_product_form button[type=submit]", function() {
+        let form = $("form.delete_product_form");
+        filterProducts(form);
         $("body").removeClass("show_popover_overlay");
         $(".popover_overlay").fadeOut();
+        $(this).closest("tr").removeClass("show_delete");
         return false;
     });
 
