@@ -8,7 +8,7 @@ $(document).ready(function() {
         button.closest("ul").find(".active").removeClass("active");
         button.addClass("active");
 
-        // filterProducts(form);
+        filterProducts(form);
 
         return false;
     });
@@ -23,8 +23,8 @@ $(document).ready(function() {
 
 /* Ajax to filter products */
 function filterProducts(form) {
-    // $.post(form.attr("action"), form.serialize(), function(res) {
-    //     $(".products_container").html(res);
-    //     console.log(res);
-    // });
+    $.post(form.attr("action"), form.serialize(), function(res) {
+        $(".products_container").html(res);
+        console.log(res);
+    });
 }
