@@ -12,51 +12,40 @@
     <script src="../assets/js/vendor/bootstrap-select.min.js"></script>
     <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/vendor/bootstrap-select.min.css">
-
     <link rel="stylesheet" href="../assets/css/custom/global.css">
     <link rel="stylesheet" href="../assets/css/custom/cart.css">
     <script src="../assets/js/global/cart.js"></script>
+    <script src="../assets/js/global/validation.js"></script>
 </head>
-
-<script>
-    $(document).ready(function() {
-    });
-</script>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Let’s order fresh items for you.</h1>
+            <a href="/"><h1>Let’s order fresh items for you.</h1></a>
             <div>
                 <a class="signup_btn" data-toggle="modal" data-target="#signup_modal">Signup</a>
                 <a class="login_btn" data-toggle="modal" data-target="#login_modal">Login</a>
             </div>
         </header>
-        <aside>
-            <a href="/users/catalogue"><img src="../assets/images/organic_shop_logo.svg" alt="Organic Shop"></a>
-            <!-- <ul>
-                <li class="active"><a href="#"></a></li>
-                <li><a href="#"></a></li>
-            </ul> -->
-        </aside>
         <section >
             <form class="search_form">
                 <input type="text" name="search" placeholder="Search Products">
             </form>
-            <button class="show_cart">Cart (0)</button>
             <section>
                 <form class="cart_items_form">
+                    <input type="hidden" name="update_cart_item_id" value="">
+                    <input type="hidden" name="update_cart_item_quantity" value="">
                     <ul>
-                        <li>
+                        <li  class="form-control">
                             <img src="../assets/images/burger.png" alt="">
                             <h3>Vegetable</h3>
-                            <span>$ 10</span>
+                            <span class="price">$ 20</span>
                             <ul>
                                 <li>
                                     <label>Quantity</label>
                                     <input type="text" min-value="1" value="1">
                                     <ul>
-                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="1"></button></li>
-                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="0"></button></li>
+                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="1" data-id="1"></button></li>
+                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="0" data-id="1"></button></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -73,17 +62,17 @@
                                 <button type="button" class="remove">Remove</button>
                             </div>
                         </li>
-                        <li>
+                        <li  class="form-control">
                             <img src="../assets/images/burger.png" alt="">
                             <h3>Vegetable</h3>
-                            <span>$ 10</span>
+                            <span class="price">$ 20</span>
                             <ul>
                                 <li>
                                     <label>Quantity</label>
                                     <input type="text" min-value="1" value="1">
                                     <ul>
-                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="1"></button></li>
-                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="0"></button></li>
+                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="1" data-id="1"></button></li>
+                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="0" data-id="1"></button></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -100,17 +89,17 @@
                                 <button type="button" class="remove">Remove</button>
                             </div>
                         </li>
-                        <li>
+                        <li  class="form-control">
                             <img src="../assets/images/burger.png" alt="">
                             <h3>Vegetable</h3>
-                            <span>$ 10</span>
+                            <span class="price">$ 20</span>
                             <ul>
                                 <li>
                                     <label>Quantity</label>
                                     <input type="text" min-value="1" value="1">
                                     <ul>
-                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="1"></button></li>
-                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="0"></button></li>
+                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="1" data-id="1"></button></li>
+                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="0" data-id="1"></button></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -127,17 +116,17 @@
                                 <button type="button" class="remove">Remove</button>
                             </div>
                         </li>
-                        <li>
+                        <li  class="form-control">
                             <img src="../assets/images/burger.png" alt="">
                             <h3>Vegetable</h3>
-                            <span>$ 10</span>
+                            <span class="price">$ 20</span>
                             <ul>
                                 <li>
                                     <label>Quantity</label>
                                     <input type="text" min-value="1" value="1">
                                     <ul>
-                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="1"></button></li>
-                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="0"></button></li>
+                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="1" data-id="1"></button></li>
+                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="0" data-id="1"></button></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -154,17 +143,17 @@
                                 <button type="button" class="remove">Remove</button>
                             </div>
                         </li>
-                        <li>
+                        <li  class="form-control">
                             <img src="../assets/images/burger.png" alt="">
                             <h3>Vegetable</h3>
-                            <span>$ 10</span>
+                            <span class="price">$ 20</span>
                             <ul>
                                 <li>
                                     <label>Quantity</label>
                                     <input type="text" min-value="1" value="1">
                                     <ul>
-                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="1"></button></li>
-                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="0"></button></li>
+                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="1" data-id="1"></button></li>
+                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="0" data-id="1"></button></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -181,17 +170,71 @@
                                 <button type="button" class="remove">Remove</button>
                             </div>
                         </li>
-                        <li>
+                        <li  class="form-control">
                             <img src="../assets/images/burger.png" alt="">
                             <h3>Vegetable</h3>
-                            <span>$ 10</span>
+                            <span class="price">$ 20</span>
                             <ul>
                                 <li>
                                     <label>Quantity</label>
                                     <input type="text" min-value="1" value="1">
                                     <ul>
-                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="1"></button></li>
-                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="0"></button></li>
+                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="1" data-id="1"></button></li>
+                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="0" data-id="1"></button></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <label>Total Amount</label>
+                                    <span class="total_amount">$ 10</span>
+                                </li>
+                                <li>
+                                    <button type="button" class="remove_item"></button>
+                                </li>
+                            </ul>
+                            <div>
+                                <p>Are you sure you want to remove this item?</p>
+                                <button type="button" class="cancel_remove">Cancel</button>
+                                <button type="button" class="remove">Remove</button>
+                            </div>
+                        </li>
+                        <li  class="form-control">
+                            <img src="../assets/images/burger.png" alt="">
+                            <h3>Vegetable</h3>
+                            <span class="price">$ 20</span>
+                            <ul>
+                                <li>
+                                    <label>Quantity</label>
+                                    <input type="text" min-value="1" value="1">
+                                    <ul>
+                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="1" data-id="1"></button></li>
+                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="0" data-id="1"></button></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <label>Total Amount</label>
+                                    <span class="total_amount">$ 10</span>
+                                </li>
+                                <li>
+                                    <button type="button" class="remove_item"></button>
+                                </li>
+                            </ul>
+                            <div>
+                                <p>Are you sure you want to remove this item?</p>
+                                <button type="button" class="cancel_remove">Cancel</button>
+                                <button type="button" class="remove">Remove</button>
+                            </div>
+                        </li>
+                        <li  class="form-control">
+                            <img src="../assets/images/burger.png" alt="">
+                            <h3>Vegetable</h3>
+                            <span class="price">$ 20</span>
+                            <ul>
+                                <li>
+                                    <label>Quantity</label>
+                                    <input type="text" min-value="1" value="1">
+                                    <ul>
+                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="1" data-id="1"></button></li>
+                                        <li><button type="button" class="increase_decrease_quantity" data-quantity-ctrl="0" data-id="1"></button></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -288,20 +331,22 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <button data-dismiss="modal" aria-label="Close" class="close_modal"></button>
-                    <form action="process.php" method="post">
+                    <form action="process.php" method="post" class="login_signup_form">
                         <h2>Login to order.</h2>
                         <button type="button" class="switch_to_signup">New Member? Register here.</button>
                         <ul>
                             <li>
                                 <input type="text" name="email" required>
                                 <label>Email</label>
+                                <p class="email_message"></p>
                             </li>
                             <li>
                                 <input type="password" name="password" required>
                                 <label>Password</label>
+                                <p class="password_message"></p>
                             </li>
                         </ul>
-                        <button type="button">Login</button>
+                        <button type="submit">Login</button>
                     </form>
                 </div>
             </div>
@@ -315,27 +360,32 @@
                         <button type="button" class="switch_to_signup">Already a member? Login here.</button>
                         <ul>
                             <li>
-                                <input type="text" name="email" required>
+                                <input type="text" name="first_name" required>
+                                <label>First Name</label>
+                                <p class="first_name_message"></p>
+                            </li>
+                            <li>
+                                <input type="text" name="last_name" required>
+                                <label>Last Name</label>
+                                <p class="last_name_message"></p>
+                            </li>
+                            <li>
+                                <input type="email" name="email" required>
                                 <label>Email</label>
+                                <p class="email_message"></p>
                             </li>
                             <li>
                                 <input type="password" name="password" required>
                                 <label>Password</label>
+                                <p class="password_message"></p>
                             </li>
                             <li>
-                                <input type="password" name="password" required>
-                                <label>Password</label>
-                            </li>
-                            <li>
-                                <input type="password" name="password" required>
-                                <label>Password</label>
-                            </li>
-                            <li>
-                                <input type="password" name="password" required>
-                                <label>Password</label>
+                                <input type="password" name="confirm_password" required>
+                                <label>Confirm Password</label>
+                                <p class="confirm_password_message"></p>
                             </li>
                         </ul>
-                        <button type="button">Signup</button>
+                        <button type="submit">Signup</button>
                     </form>
                 </div>
             </div>

@@ -441,7 +441,7 @@ body #signup_modal .modal-dialog .modal-content form li:nth-child(2) {
 body #signup_modal .modal-dialog .modal-content form li:nth-child(1) {
   margin-right: 10px;
 }
-body .popover_overlay {
+body .popover_overlay{
   position: fixed;
   top: 0;
   bottom: 0;
@@ -451,6 +451,7 @@ body .popover_overlay {
   z-index: 100;
   opacity: 0.7;
   display: none;
+  text-align: center;
 }
 .logout_btn {
   background-color: #fff;
@@ -512,4 +513,11 @@ body .popover_overlay {
 }
 .show_popover_overlay {
   overflow: hidden;
+}
+p[class*="_message"] {
+  color: red;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }

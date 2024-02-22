@@ -8,12 +8,13 @@ $(document).ready(function() {
         button.closest("ul").find(".active").removeClass("active");
         button.addClass("active");
 
-        // filterProducts(form);
+        filterProducts(form);
 
         return false;
     });
 
     $("body").on("keyup", ".search_form", function() {
+        console.log("okay")
         let form = $(this);
         filterProducts(form);
         $(".categories_form").find(".active").removeClass("active");

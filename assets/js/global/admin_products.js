@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    showProducts();
+
     /* To delete a product */
     $("body").on("click", ".delete_product", function() {
         $(this).closest("tr").addClass("show_delete");
@@ -47,38 +47,39 @@ $(document).ready(function() {
 
     });
 
-    $("body").on("submit", ".add_product_form", function() {
-        alert("okay")
-        // $.ajax({
-        //     url: $(this).attr("action"),
-        //     type: 'POST',
-        //     data: new FormData(this),
-        //     contentType: false,
-        //     cache: false,
-        //     processData:false,
-        //     success: function(res) {
-        //         let form_data_action = $('.form_data_action').val();
+    $("body").on("click", "#add_product_btn", function() {
+        let form = $("form#add_product_form");
+        let formData = new FormData(form[0]);
+        $.ajax({
+            url: form.attr("action"),
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            cache: false,
+            processData:false,
+            success: function(res) {
+                let form_data_action = $('.form_data_action').val();
                 
-        //         if(form_data_action == "add_product" || form_data_action == "edit_product") {
-        //             if(parseInt(res) == 0) {
-        //                 $(".product_content").html(res);
-        //                 resetAddProductForm();
-        //                 $("#add_product_modal").modal("hide");
-        //             }
-        //             else {
-        //                 $(".image_label").html("Upload Images (4 Max) <span>* Please add an image.</span>");
-        //             };
-        //         }
-        //         else if(form_data_action == "upload_image" || form_data_action == "remove_image") {
-        //             $(".image_preview_list").html(res);
-        //         }
-        //         else if(form_data_action == "reset_form") {
-        //             resetAddProductForm();
-        //         };
-        //         ($(".add_product_form").attr("data-modal-action") == 0) ? $(".form_data_action").val("add_product") : $(".form_data_action").val("edit_product");
-        //         ($(".image_preview_list").children().length >= 4) ? $(".upload_image").addClass("hidden") : $(".upload_image").removeClass("hidden");
-        //     }
-        // });
+                if(form_data_action == "add_product" || form_data_action == "edit_product") {
+                    if(parseInt(res) == 0) {
+                        $(".product_content").html(res);
+                        resetAddProductForm();
+                        $("#add_product_modal").modal("hide");
+                    }
+                    else {
+                        $(".image_label").html("Upload Images (4 Max) <span>* Please add an image.</span>");
+                    };
+                }
+                else if(form_data_action == "upload_image" || form_data_action == "remove_image") {
+                    $(".image_preview_list").html(res);
+                }
+                else if(form_data_action == "reset_form") {
+                    resetAddProductForm();
+                };
+                ($(".add_product_form").attr("data-modal-action") == 0) ? $(".form_data_action").val("add_product") : $(".form_data_action").val("edit_product");
+                ($(".image_preview_list").children().length >= 4) ? $(".upload_image").addClass("hidden") : $(".upload_image").removeClass("hidden");
+            }
+        });
  
         return false;
     }); 
@@ -87,18 +88,14 @@ $(document).ready(function() {
         filterProducts(form)
         return false;
     });
-
     $("body").on("click", ".categories_form button", function() {
         let button = $(this);
         let form = button.closest("form");
-
         form.find("input[name=category]").val(button.attr("data-category"));
         form.find("input[name=category_name]").val(button.attr("data-category-name"));
         button.closest("ul").find(".active").removeClass("active");
         button.addClass("active");
-
         filterProducts(form);
-
         return false;
     });
 
@@ -107,11 +104,12 @@ $(document).ready(function() {
         $(".categories_form").find(".active").removeClass("active");
     });
 
-    $("body").on("submit", ".delete_product_form", function(){
-        alert("hello");
-        // filterProducts($(this));
-        // $("body").removeClass("show_popover_overlay");
-        // $(".popover_overlay").fadeOut();
+    $("body").on("click", ".delete_product_form button[type=submit]", function() {
+        let form = $("form.delete_product_form");
+        filterProducts(form);
+        $("body").removeClass("show_popover_overlay");
+        $(".popover_overlay").fadeOut();
+        $(this).closest("tr").removeClass("show_delete");
         return false;
     });
 
@@ -149,42 +147,4 @@ function filterProducts(form) {
         $(".product_content").html(res);
         console.log(res);
     });
-}
-
-function showProducts()
-{
-
-
-    let product = `<tr>
-    <td>
-        <span>
-            <img src="../assets/images/food.png" alt="#">
-            Vegetables
-        </span>
-    </td>
-    <td><span>123</span></td>
-    <td><span>$ 10</span></td>
-    <td><span>Vegetable</span></td>
-    <td><span>123</span></td>
-    <td><span>1000</span></td>
-    <td>
-        <span>
-            <button class="edit_product">Edit</button>
-            <button class="delete_product">X</button>
-        </span>
-        <form class="delete_product_form" action="products/delete" method="post">
-            <p>Are you sure you want to remove this item?</p>
-            <button type="button" class="cancel_remove">Cancel</button>
-            <button type="submit">Remove</button>
-        </form>
-    </td>
-</tr>`;
-
-    let products = "";
-    for(let index=0; index < 10; index++)
-    {
-        products += product;
-    }
-
-    $("tbody").html(products);
 }

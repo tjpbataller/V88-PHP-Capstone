@@ -7,36 +7,16 @@ class Users extends CI_Controller
     {
         $this->load->view("users/index");
     }
-    public function catalogue()
+    public function login()
     {
-        $this->load->view("users/catalogue");
-    }
-    public function product_view()
-    {
-        $this->load->view("users/product_view");
+        $this->load->view("users/login");
     }
     public function signup()
     {
         $this->load->view("users/signup");
     }
-    public function cart()
+    public function process()
     {
-        $this->load->view("users/cart");
-    }
-    public function login()
-    {
-        $this->load->view("users/login");
-    }
-    public function admin_orders()
-    {
-        $this->load->view("users/admin_orders");
-    }
-    public function admin_products()
-    {
-        $this->load->view("users/admin_products");
-    }
-    public function admin_dashboard()
-    {
-        $this->load->view("users/admin_dashboard");
+        
     }
 }

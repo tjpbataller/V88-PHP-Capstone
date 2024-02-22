@@ -5,51 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="<?= base_url()?>/assets/js/vendor/popper.min.js"></script>
-    <script src="<?= base_url()?>/assets/js/vendor/bootstrap.min.js"></script>
-    <script src="<?= base_url()?>/assets/js/vendor/bootstrap-select.min.js"></script>
-    <link rel="stylesheet" href="<?= base_url()?>/assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="<?= base_url()?>/assets/css/vendor/bootstrap-select.min.css">
-
-    <link rel="stylesheet" href="<?= base_url()?>/assets/css/custom/admin_global.css">
-    <script src="<?= base_url()?>/assets/js/global/admin_products.js"></script>
+    <script src="../assets/js/vendor/jquery.min.js"></script>
+    <script src="../assets/js/vendor/popper.min.js"></script>
+    <script src="../assets/js/vendor/bootstrap.min.js"></script>
+    <script src="../assets/js/vendor/bootstrap-select.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../assets/css/custom/admin_global.css">
+    <script src="../assets/js/global/admin_products.js"></script>
+    <script src="../assets/js/global/image_upload.js"></script>
 </head>
-<script>
-    $(document).ready(function() {
-        $("form").submit(function(event) {
-            event.preventDefault();
-            return false;
-        });
-        /* prototype add */
-        $(".switch").click(function() {
-            window.location.href = "/users/products_dashboard";
-        });
-    });
-</script>
 <body>
     <div class="wrapper">
         <header>
             <h1>Let’s provide fresh items for everyone.</h1>
             <h2>Products</h2>
             <div>
-                <a class="switch" href="/users/catalogue">Switch to Shop View</a>
+                <a class="switch" href="/">Switch to Shop View</a>
                 <button class="profile">
-                    <img src="<?= base_url()?>/assets/images/profile.png" alt="#">
+                    <img src="../assets/images/profile.png" alt="#">
                 </button>
             </div>
             <div class="dropdown show">
                 <a class="btn btn-secondary dropdown-toggle profile_dropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                 <div class="dropdown-menu admin_dropdown" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="/users/login">Logout</a>
+                    <a class="dropdown-item" href="login.html">Logout</a>
                 </div>
             </div>
         </header>
         <aside>
-            <a href="#"><img src="<?= base_url()?>/assets/images/organi_shop_logo_dark.svg" alt="Organic Shop"></a>
+            <a href="#"><img src="../assets/images/organi_shop_logo_dark.svg" alt="Organic Shop"></a>
             <ul>
-                <li><a href="/users/admin_orders">Orders</a></li>
+                <li><a href="/dashboard/orders">Orders</a></li>
                 <li class="active"><a href="#">Products</a></li>
             </ul>
         </aside>
@@ -58,38 +45,38 @@
                 <input type="text" name="search" placeholder="Search Products">
             </form>
             <button class="add_product" data-toggle="modal" data-target="#add_product_modal">Add Product</button>
-            <form action="process.php" method="post" class="status_form">
+            <form action="process.php" method="post" class="categories_form">
                 <h3>Categories</h3>
                 <ul>
                     <li>
                         <button type="submit" class="active">
-                            <span>36</span><img src="<?= base_url()?>/assets/images/all_orders_icon.svg" alt="#"><h4>All Products</h4>
+                            <span>36</span><img src="../assets/images/all_orders_icon.svg" alt="#"><h4>All Products</h4>
                         </button>
                     </li>
                     <li>
                         <button type="submit">
-                            <span>36</span><img src="<?= base_url()?>/assets/images/pending_icon.svg" alt="#"><h4>Pending</h4>
+                            <span>36</span><img src="../assets/images/pending_icon.svg" alt="#"><h4>Pending</h4>
                         </button>
                     </li>
                     <li>
                         <button type="submit">
-                            <span>36</span><img src="<?= base_url()?>/assets/images/on_process_icon.svg" alt="#"><h4>On-Process</h4>
+                            <span>36</span><img src="../assets/images/on_process_icon.svg" alt="#"><h4>On-Process</h4>
                         </button>
                     </li>
                     <li>
                         <button type="submit">
-                            <span>36</span><img src="<?= base_url()?>/assets/images/shipped_icon.svg" alt="#"><h4>Shipped</h4>
+                            <span>36</span><img src="../assets/images/shipped_icon.svg" alt="#"><h4>Shipped</h4>
                         </button>
                     </li>
                     <li>
                         <button type="submit">
-                            <span>36</span><img src="<?= base_url()?>/assets/images/delivered_icon.svg" alt="#"><h4>Delivered</h4>
+                            <span>36</span><img src="../assets/images/delivered_icon.svg" alt="#"><h4>Delivered</h4>
                         </button>
                     </li>
                 </ul>
             </form>
             <div>
-                <table class="products_table" id="products_table">
+                <table class="products_table">
                     <thead>
                         <tr>
                             <th><h3>All Products</h3></th>
@@ -105,7 +92,7 @@
                         <tr>
                             <td>
                                 <span>
-                                    <img src="<?= base_url()?>/assets/images/food.png" alt="#">
+                                    <img src="../assets/images/food.png" alt="#">
                                     Vegetables
                                 </span>
                             </td>
@@ -119,7 +106,7 @@
                                     <button class="edit_product">Edit</button>
                                     <button class="delete_product">X</button>
                                 </span>
-                                <form class="delete_product_form" action="products/delete" method="post" id="form1">
+                                <form class="delete_product_form" action="process.php" method="post">
                                     <p>Are you sure you want to remove this item?</p>
                                     <button type="button" class="cancel_remove">Cancel</button>
                                     <button type="submit">Remove</button>
@@ -130,11 +117,11 @@
                 </table>
             </div>
         </section>
-        <div class="modal fade form_modal" id="add_product_modal" tabindex="-1" aria-hidden="true">
+        <div class="modal fade form_modal" id="add_product_modal" tabindex="999" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <button data-dismiss="modal" aria-label="Close" class="close_modal"></button>
-                    <form class="delete_product_form" action="process.php" method="post">
+                    <form action="process.php" method="post" id="add_product_form" >
                         <h2>Add a Product</h2>
                         <ul>
                             <li>
@@ -156,23 +143,27 @@
                                 </select>
                             </li>
                             <li>
-                                <input type="number" name="price" value="1" required>
-                                <label>Price</label>
+                                <input id="price" type="number" name="price" value="1" required>
+                                <label for="price">Price</label>
                             </li>
                             <li>
-                                <input type="number" name="inventory" value="1" required>
-                                <label>Inventory</label>
+                                <input id="inventory" type="number" name="inventory" value="1" required>
+                                <label for="inventory">Inventory</label>
                             </li>
                             <li>
-                                <label>Upload Images (5 Max)</label>
+                                <label>Upload Images (4 Max)</label>
                                 <ul>
-                                    <li><button type="button" class="upload_image"></button></li>
+                                    <li>
+                                        <button type="button" class="upload_image"></button>
+                                        <div id="image_preview"></div>
+                                    </li>
                                 </ul>
-                                <input type="file" name="image" accept="image/*">
+                                <input type="file" name="image" accept="image/*" class="image_input" id="image_upload">
                             </li>
                         </ul>
                         <button type="button" data-dismiss="modal" aria-label="Close">Cancel</button>
-                        <button type="submit">Save</button>
+                        <button type="submit" id="add_product_btn">Save</button>
+                        
                     </form>
                 </div>
             </div>

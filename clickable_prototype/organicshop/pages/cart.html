@@ -15,12 +15,8 @@
     <link rel="stylesheet" href="../assets/css/custom/global.css">
     <link rel="stylesheet" href="../assets/css/custom/cart.css">
     <script src="../assets/js/global/cart.js"></script>
+    <script src="../assets/js/global/validation.js"></script>
 </head>
-
-<script>
-    $(document).ready(function() {
-    });
-</script>
 <body>
     <div class="wrapper">
         <header>
@@ -335,20 +331,22 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <button data-dismiss="modal" aria-label="Close" class="close_modal"></button>
-                    <form action="process.php" method="post">
+                    <form action="process.php" method="post" class="login_signup_form">
                         <h2>Login to order.</h2>
                         <button type="button" class="switch_to_signup">New Member? Register here.</button>
                         <ul>
                             <li>
                                 <input type="text" name="email" required>
                                 <label>Email</label>
+                                <p class="email_message"></p>
                             </li>
                             <li>
                                 <input type="password" name="password" required>
                                 <label>Password</label>
+                                <p class="password_message"></p>
                             </li>
                         </ul>
-                        <button type="button">Login</button>
+                        <button type="submit">Login</button>
                     </form>
                 </div>
             </div>
@@ -362,27 +360,32 @@
                         <button type="button" class="switch_to_signup">Already a member? Login here.</button>
                         <ul>
                             <li>
-                                <input type="text" name="email" required>
+                                <input type="text" name="first_name" required>
+                                <label>First Name</label>
+                                <p class="first_name_message"></p>
+                            </li>
+                            <li>
+                                <input type="text" name="last_name" required>
+                                <label>Last Name</label>
+                                <p class="last_name_message"></p>
+                            </li>
+                            <li>
+                                <input type="email" name="email" required>
                                 <label>Email</label>
+                                <p class="email_message"></p>
                             </li>
                             <li>
                                 <input type="password" name="password" required>
                                 <label>Password</label>
+                                <p class="password_message"></p>
                             </li>
                             <li>
-                                <input type="password" name="password" required>
-                                <label>Password</label>
-                            </li>
-                            <li>
-                                <input type="password" name="password" required>
-                                <label>Password</label>
-                            </li>
-                            <li>
-                                <input type="password" name="password" required>
-                                <label>Password</label>
+                                <input type="password" name="confirm_password" required>
+                                <label>Confirm Password</label>
+                                <p class="confirm_password_message"></p>
                             </li>
                         </ul>
-                        <button type="button">Signup</button>
+                        <button type="submit">Signup</button>
                     </form>
                 </div>
             </div>
