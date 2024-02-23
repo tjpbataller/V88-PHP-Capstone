@@ -12,9 +12,9 @@
     <script src="../assets/js/vendor/popper.min.js"></script>
     <script src="../assets/js/vendor/bootstrap.min.js"></script>
     <script src="../assets/js/vendor/bootstrap-select.min.js"></script>
-    <script src="../assets/js/global/dashboard.js"></script>
     <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/vendor/bootstrap-select.min.css">
+
     <link rel="stylesheet" href="../assets/css/custom/global.css">
     <link rel="stylesheet" href="../assets/css/custom/product_dashboard.css">
 </head>
@@ -26,17 +26,24 @@
 <body>
     <div class="wrapper">
         <header>
-            <a href="/"><h1>Let’s order fresh items for you.</h1></a>
+            <h1>Let’s order fresh items for you.</h1>
             <div>
-                <a class="signup_btn" href="signup">Signup</a>
-                <a class="login_btn" href="login">Login</a>
+                <a class="signup_btn" href="signup.html">Signup</a>
+                <a class="login_btn" href="login.html">Login</a>
             </div>
         </header>
+        <aside>
+            <a href="products_dashboard.html"><img src="../assets/images/organic_shop_logo.svg" alt="Organic Shop"></a>
+            <!-- <ul>
+                <li class="active"><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul> -->
+        </aside>
         <section >
             <form action="process.php" method="post" class="search_form">
                 <input type="text" name="search" placeholder="Search Products">
             </form>
-            <a class="show_cart" href="cart">Cart (0)</a>
+            <a class="show_cart" href="cart.html">Cart (0)</a>
             <form action="process.php" method="post" class="categories_form">
                 <h3>Categories</h3>
                 <ul>
@@ -76,8 +83,158 @@
                 <h3>All Products(46)</h3>
                 <ul>
                     <li>
-                        <a href="products/view/1">
-                            <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-WrLlWX.png" alt="#">
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
+                            <h3>Vegetables</h3>
+                            <ul class="rating">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <span>36 Rating</span>
+                            <span class="price">$ 10</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
+                            <h3>Vegetables</h3>
+                            <ul class="rating">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <span>36 Rating</span>
+                            <span class="price">$ 10</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
+                            <h3>Vegetables</h3>
+                            <ul class="rating">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <span>36 Rating</span>
+                            <span class="price">$ 10</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
+                            <h3>Vegetables</h3>
+                            <ul class="rating">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <span>36 Rating</span>
+                            <span class="price">$ 10</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
+                            <h3>Vegetables</h3>
+                            <ul class="rating">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <span>36 Rating</span>
+                            <span class="price">$ 10</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
+                            <h3>Vegetables</h3>
+                            <ul class="rating">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <span>36 Rating</span>
+                            <span class="price">$ 10</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
+                            <h3>Vegetables</h3>
+                            <ul class="rating">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <span>36 Rating</span>
+                            <span class="price">$ 10</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
+                            <h3>Vegetables</h3>
+                            <ul class="rating">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <span>36 Rating</span>
+                            <span class="price">$ 10</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
+                            <h3>Vegetables</h3>
+                            <ul class="rating">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <span>36 Rating</span>
+                            <span class="price">$ 10</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
+                            <h3>Vegetables</h3>
+                            <ul class="rating">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <span>36 Rating</span>
+                            <span class="price">$ 10</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
                             <h3>Vegetables</h3>
                             <ul class="rating">
                                 <li></li>

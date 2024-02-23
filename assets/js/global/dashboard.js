@@ -14,7 +14,6 @@ $(document).ready(function() {
     });
 
     $("body").on("keyup", ".search_form", function() {
-        console.log("okay")
         let form = $(this);
         filterProducts(form);
         $(".categories_form").find(".active").removeClass("active");
@@ -24,8 +23,8 @@ $(document).ready(function() {
 
 /* Ajax to filter products */
 function filterProducts(form) {
-    // $.post(form.attr("action"), form.serialize(), function(res) {
-    //     $(".products_container").html(res);
-    //     console.log(res);
-    // });
+    $.post(form.attr("action"), form.serialize(), function(res) {
+        $(".products_container").html(res);
+        console.log(res);
+    });
 }

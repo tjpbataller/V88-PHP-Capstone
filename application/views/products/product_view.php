@@ -5,36 +5,62 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <script src="<?=base_url()?>assets/js/vendor/jquery.min.js"></script>
-    <script src="<?=base_url()?>assets/js/vendor/popper.min.js"></script>
-    <script src="<?=base_url()?>assets/js/vendor/bootstrap.min.js"></script>
-    <script src="<?=base_url()?>assets/js/vendor/bootstrap-select.min.js"></script>
-    <script src="<?=base_url()?>assets/js/global/product_view.js"></script>
-    <link rel="stylesheet" href="<?=base_url()?>assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/css/vendor/bootstrap-select.min.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/css/custom/global.css">
-    <link rel="stylesheet" href="<?=base_url()?>assets/css/custom/product_view.css">
+
+    <script src="../assets/js/vendor/jquery.min.js"></script>
+    <script src="../assets/js/vendor/popper.min.js"></script>
+    <script src="../assets/js/vendor/bootstrap.min.js"></script>
+    <script src="../assets/js/vendor/bootstrap-select.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor/bootstrap-select.min.css">
+
+    <link rel="stylesheet" href="../assets/css/custom/global.css">
+    <link rel="stylesheet" href="../assets/css/custom/product_view.css">
 </head>
+
+<script>
+    $(document).ready(function() {
+        $("#add_to_cart").click(function(){
+            $("<span class='added_to_cart'>Added to cart succesfully!</span>")
+            .insertAfter(this)
+            .fadeIn()
+            .delay(1000)
+            .fadeOut(function() {
+                $(this).remove();
+            });
+           return false;
+        });
+    })
+</script>
 <body>
     <div class="wrapper">
         <header>
-            <a href="/"><h1>Let’s order fresh items for you.</h1></a>
+            <h1>Let’s order fresh items for you.</h1>
             <div>
-                <a class="show_cart" href="/cart">Cart (0)</a>
-                <a class="signup_btn" href="/signup">Signup</a>
-                <a class="login_btn" href="/login">Login</a>
+                <a class="signup_btn" href="signup.html">Signup</a>
+                <a class="login_btn" href="login.html">Login</a>
             </div>
         </header>
-        <section>
-            <a href="/">Go Back</a>
+        <aside>
+            <a href="catalogue.html"><img src="../assets/images/organic_shop_logo.svg" alt="Organic Shop"></a>
+            <!-- <ul>
+                <li class="active"><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul> -->
+        </aside>
+        <section >
+            <form action="process.php" method="post" class="search_form">
+                <input type="text" name="search" placeholder="Search Products">
+            </form>
+            <a class="show_cart" href="cart.html">Cart (0)</a>
+            <a href="catalogue.html">Go Back</a>
             <ul>
                 <li>
-                    <img src="<?=base_url()?>assets/images/burger.png" alt="food">
+                    <img src="../assets/images/burger.png" alt="food">
                     <ul>
-                        <li class="active"><button class="show_image"><img src="<?=base_url()?>assets/images/burger.png" alt="food"></button></li>
-                        <li><button class="show_image"><img src="<?=base_url()?>assets/images/burger.png" alt="food"></button></li>
-                        <li><button class="show_image"><img src="<?=base_url()?>assets/images/burger.png" alt="food"></button></li>
-                        <li><button class="show_image"><img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-shoes-WrLlWX.png" alt="food"></button></li>
+                        <li class="active"><button class="show_image"><img src="../assets/images/burger.png" alt="food"></button></li>
+                        <li><button class="show_image"><img src="../assets/images/burger.png" alt="food"></button></li>
+                        <li><button class="show_image"><img src="../assets/images/burger.png" alt="food"></button></li>
+                        <li><button class="show_image"><img src="../assets/images/burger.png" alt="food"></button></li>
                     </ul>
                 </li>
                 <li>
@@ -72,8 +98,8 @@
                 <h3>Similar Items</h3>
                 <ul>
                     <li>
-                        <a href="/products/view/1">
-                            <img src="<?=base_url()?>assets/images/food.png" alt="#">
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
                             <h3>Vegetables</h3>
                             <ul class="rating">
                                 <li></li>
@@ -87,8 +113,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/products/view/2">
-                            <img src="<?=base_url()?>assets/images/food.png" alt="#">
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
                             <h3>Vegetables</h3>
                             <ul class="rating">
                                 <li></li>
@@ -102,8 +128,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/products/view/3">
-                            <img src="<?=base_url()?>assets/images/food.png" alt="#">
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
                             <h3>Vegetables</h3>
                             <ul class="rating">
                                 <li></li>
@@ -117,8 +143,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/products/view/4">
-                            <img src="<?=base_url()?>assets/images/food.png" alt="#">
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
                             <h3>Vegetables</h3>
                             <ul class="rating">
                                 <li></li>
@@ -132,8 +158,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/products/view/5">
-                            <img src="<?=base_url()?>assets/images/food.png" alt="#">
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
                             <h3>Vegetables</h3>
                             <ul class="rating">
                                 <li></li>
@@ -147,8 +173,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/products/view/6">
-                            <img src="<?=base_url()?>assets/images/food.png" alt="#">
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
                             <h3>Vegetables</h3>
                             <ul class="rating">
                                 <li></li>
@@ -162,8 +188,8 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/products/view/7">
-                            <img src="<?=base_url()?>assets/images/food.png" alt="#">
+                        <a href="product_view.html">
+                            <img src="../assets/images/food.png" alt="#">
                             <h3>Vegetables</h3>
                             <ul class="rating">
                                 <li></li>

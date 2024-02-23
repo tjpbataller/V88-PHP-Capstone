@@ -18,24 +18,34 @@
     <script src="../assets/js/global/dashboard.js"></script>
     <link rel="stylesheet" href="../assets/css/custom/global.css">
     <link rel="stylesheet" href="../assets/css/custom/signup.css">
-    <script src="../assets/js/global/validation.js"></script>
 </head>
+<script>
+    $(document).ready(function() {
+        $("input[name=email]").focus();
+        $("form").submit(function(event) {
+            event.preventDefault();
+            return false;
+        });
+        /* prototype add */
+        $(".login_btn").click(function() {
+            window.location.href = "catalogue.html";
+        });
+    });
+</script>
 <body>
     <div class="wrapper">
         <a href="/dashboard"><img src="../assets/images/organic_shop_logo_large.svg" alt="Organic Shop"></a>
-        <form action="../process/process.php" method="post" class="login_form" id="login_signup_form">
+        <form action="../process/process.php" method="post" class="login_form">
             <h2>Login to order.</h2>
-            <a href="signup">New Member? Register here.</a>
+            <a href="signup.html">New Member? Register here.</a>
             <ul>
                 <li>
                     <input type="text" name="email">
                     <label>Email</label>
-                    <p class="email_message"></p>
                 </li>
                 <li>
                     <input type="password" name="password">
                     <label>Password</label>
-                    <p class="password_message"></p>
                 </li>
             </ul>
             <button type="submit" class="login_btn">Login</button>

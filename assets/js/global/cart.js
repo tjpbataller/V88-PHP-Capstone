@@ -10,36 +10,39 @@ $(document).ready(function() {
         $(".popover_overlay").fadeOut();
         $(".cart_items_form").find("input[name=action]").val("update_cart");
     });
+    /* prototype added delete */
     $("body").on("click", ".remove", function() {
         $(this).closest('li.confirm_delete').remove();
         $(".popover_overlay").fadeOut();
     });
+
     $("body").on("click", ".increase_decrease_quantity", function() {
-        let input = $(this).closest(".form-control").find("input");
+        let input = $(this).closest(".form_control").find("input");
         let input_val = parseInt(input.val());
+
         if($(this).attr("data-quantity-ctrl") == 1) {
             input.val(input_val + 1);
         }
         else {
-            if(input_val > 1) {
-                input.val(input_val - 1);
+            if(input_val != 1) {
+                input.val(input_val - 1)
             };
         };
-        let total_amount = parseInt(input.val()) * parseInt(($(".price").text()).substring(2));
-        $(this).closest(".form-control").find(".total_amount").text("$ " + total_amount);
-        $("input[name=update_cart_item_id]").val($(this).attr("data-id"))
+
+        $("input[name=update_cart_item_id]").val($(this).val())
         $("input[name=update_cart_item_quantity]").val(input.val());
         $(".cart_items_form").trigger("submit");
     });
+
     $("body").on("submit", ".cart_items_form", function() {
         let form = $(this);
-        $(".popover_overlay").show();
-        // $.post(form.attr("action"), form.serialize(), function(res) {
-        //     $(".wrapper > section").html(res);
-        // });
-        $(".popover_overlay").fadeOut();
+        $.post(form.attr("action"), form.serialize(), function(res) {
+            $(".wrapper > section").html(res);
+            $(".popover_overlay").fadeOut();
+        });
         return false;
     });
+
     $("body").on("submit", ".checkout_form", function() {
         let form = $(this);
         $.post(form.attr("action"), form.serialize(), function(res) {
@@ -49,6 +52,7 @@ $(document).ready(function() {
 
         return false;
     });
+
     $("body").on("submit", ".pay_form", function() {
         let form = $(this);
         $(this).find("button").addClass("loading");
